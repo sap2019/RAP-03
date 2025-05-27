@@ -1,0 +1,5 @@
+@EndUserText.label: 'BD'
+define service Zflight_technomaniac_1 {
+  expose zi_connection_technomaniac_1;
+  expose zi_flight_techr_1;
+}
