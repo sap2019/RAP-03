@@ -4,12 +4,14 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Flight Information'
 @Metadata.ignorePropagatedAnnotations: true
+
 define view zi_flight_techr_1 as select from /dmo/flight
 association [1] to zi_carrier_tech_r_1 as _Airline on $projection.CarrierId = _Airline.CarrierId
 
 {
 @UI.lineItem: [{ position:10 }]
  @ObjectModel.text.association:'_Airline'
+  @Search.defaultSearchElement: true
     key carrier_id as CarrierId,
     @UI.lineItem: [{ position:20 }]
     key connection_id as ConnectionId,
@@ -21,6 +23,8 @@ association [1] to zi_carrier_tech_r_1 as _Airline on $projection.CarrierId = _A
     @UI.lineItem: [{ position:50 }]
     currency_code as CurrencyCode,
     @UI.lineItem: [{ position:60 }]
+     
+      @Search.defaultSearchElement: true
     plane_type_id as PlaneTypeId,
     @UI.lineItem: [{ position:70 }]
     seats_max as SeatsMax,
