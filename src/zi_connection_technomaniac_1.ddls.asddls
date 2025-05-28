@@ -38,17 +38,19 @@ association [1] to zi_carrier_tech_r_1 as _Airline on $projection.CarrierId = _A
       @UI.lineItem: [{ position:20 }]
       
       @UI.identification: [{ position:20 }]
-      //    @Consumption.valueHelpDefinition: [ {entity: {name: '/DMO/CONNECTION', element: 'Connection_ID'} } ]
+         
   key connection_id   as ConnectionId,
       @UI.lineItem: [{ position:30 }]
       @UI.identification: [{ position:30 }]
       @UI.selectionField: [{ position:10 }]
       @Search.defaultSearchElement: true
+       @Consumption.valueHelpDefinition: [ {entity: {name: 'ZI_AIRPORT_TECH_VH1', element: 'AirportId'} } ]
       airport_from_id as AirportFromId,
       @UI.lineItem: [{ position:40 }]
       @UI.identification: [{ position:40 }]
       @UI.selectionField: [{ position:20 }]
       @Search.defaultSearchElement: true
+          @Consumption.valueHelpDefinition: [ {entity: {name: 'ZI_AIRPORT_TECH_VH1', element: 'AirportId'} } ]
       airport_to_id   as AirportToId,
       @UI.lineItem: [{ position:50 , label: 'Deparature Time'}]
       departure_time  as DepartureTime,
